@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script{
                     sh '''
-                    docker build . -t dummy-go:$dummy-go
+                    docker build  dummy-go:dummy-go
                     '''
                     }
                 }
