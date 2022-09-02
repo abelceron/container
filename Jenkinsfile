@@ -26,7 +26,7 @@ pipeline {
     stage("Run Container") {
       steps {
         sh """
-          docker run --name dummy-go -d -p 80:8182 dummy-go:$version
+          docker run --name dummy-go -d -p 80:8182 dummy-go111
         """
       }
     }    
