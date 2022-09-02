@@ -23,11 +23,6 @@ pipeline {
         sh "docker rm dummy-go"
       }
     }
-    stage("Delete Image") {
-      steps {
-        sh "echo y | docker image prune -a"        
-      }
-    }
     stage("Run Container") {
       steps {
         sh """
