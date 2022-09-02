@@ -23,10 +23,19 @@ pipeline {
         sh "docker rm dummy-go"
       }
     }
+    stage('build') {
+            steps {
+                script{
+                    sh '''
+                    docker build . -t dummy-go:$dummy-go
+                    '''
+                    }
+                }
+            }
     stage("Run Container") {
       steps {
         sh """
-          docker run --name dummy-go -d -p 80:8182 dummy-go111
+          docker run --name dummy-go -d -p 80:8182 dummy-go
         """
       }
     }    
